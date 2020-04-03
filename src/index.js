@@ -25,14 +25,14 @@ if( currentTheme === bodyTheme.dark ) {
     checkBox.checked = true;
 }
 
-checkBox.addEventListener( `change`, () => {
-    if( checkBox.checked === false ) {
-        body.classList.remove( localStorage.getItem( `bodyTheme` ) );
-        localStorage.setItem( `bodyTheme`, bodyTheme.light );
-        body.classList.add( localStorage.getItem( `bodyTheme` ) );
-    } else if( checkBox.checked === true ) {
-        body.classList.remove( localStorage.getItem( `bodyTheme` ) );
+checkBox.addEventListener( `change`, ( e ) => {
+    if( e.target.checked ) {
+        body.classList.remove( currentTheme );
         localStorage.setItem( `bodyTheme`, bodyTheme.dark );
-        body.classList.add( localStorage.getItem( `bodyTheme` ) );
+        body.classList.add( localStorage.getItem( 'bodyTheme' ) );
+    } else if( e.target.checked === false ) {
+        body.classList.remove( currentTheme );
+        localStorage.setItem( `bodyTheme`, bodyTheme.light );
+        body.classList.add( localStorage.getItem( 'bodyTheme' ) );
     }
 } );
