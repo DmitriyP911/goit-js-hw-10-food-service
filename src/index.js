@@ -27,11 +27,11 @@ if( currentTheme === bodyTheme.dark ) {
 
 checkBox.addEventListener( `change`, ( e ) => {
     if( e.target.checked ) {
-        body.classList.remove( currentTheme );
+        body.classList.remove( `light-theme` );
         localStorage.setItem( `bodyTheme`, bodyTheme.dark );
         body.classList.add( localStorage.getItem( 'bodyTheme' ) );
     } else if( e.target.checked === false ) {
-        body.classList.remove( currentTheme );
+        body.classList.remove( `dark-theme` );
         localStorage.setItem( `bodyTheme`, bodyTheme.light );
         body.classList.add( localStorage.getItem( 'bodyTheme' ) );
     }
